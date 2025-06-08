@@ -1,11 +1,9 @@
-ifndef SYSTEM_DIR
-SYS_NATIVE_EXISTS := $(shell if exist "$(SystemRoot)\Sysnative" echo 1)
-
-ifdef SYS_NATIVE_EXISTS
-    SYSTEM_DIR := $(SystemRoot)\Sysnative
+ifeq ($(PROCESSOR_ARCHITECTURE),AMD64)
+	SYSTEM_DIR := $(SystemRoot)\System32
+else ifeq ($(PROCESSOR_ARCHITEW6432),AMD64)
+	SYSTEM_DIR := $(SystemRoot)\Sysnative
 else
-    SYSTEM_DIR := $(SystemRoot)\System32
-endif
+	SYSTEM_DIR := $(SystemRoot)\System32
 endif
 
 .PHONY: all clean install uninstall
