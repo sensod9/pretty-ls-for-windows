@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="pretty-ls-for-windows" Language="1033" Version="1.0.0" Manufacturer="sensod9" UpgradeCode="b34f00fe-9c73-4030-9554-dc55f527fbed">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Platform="x64" Description="lsd.exe installer" />
+    
+    <Media Id="1" Cabinet="lsd.cab" EmbedCab="yes" />
+    
+    <Property Id="UILevel" Value="2" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="WindowsFolder">
+        <Directory Id="System64Folder" Name="System32" />
+      </Directory>
+    </Directory>
+
+    <Feature Id="MainFeature" Title="Main Component" Level="1" Absent="disallow">
+      <ComponentRef Id="LSD_Component" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Component Id="LSD_Component" Directory="System64Folder" Guid="*" Win64="yes" Permanent="yes">
+      <File Id="LSD_EXE" Name="lsd.exe" Source="../lsd.exe" KeyPath="yes" />
+      <RemoveFile Id="RemoveLSD" Name="lsd.exe" On="uninstall" />
+    </Component>
+  </Fragment>
+</Wix>
