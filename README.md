@@ -1,5 +1,5 @@
 # pretty-ls-for-windows
-> Implementation of "ls" command for Windows written in C. Provides correct word alignment. Supports pattern search and common flags
+> Implementation of "ls" command for Windows written in C. Provides correct word alignment. Supports pattern search and common options
 
 ![image](https://github.com/user-attachments/assets/31428eea-487f-4632-be1b-5a62db2c6002)
 
