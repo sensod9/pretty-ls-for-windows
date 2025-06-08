@@ -1,8 +1,7 @@
 # pretty-ls-for-windows
 > Implementation of "ls" command for Windows written in C. Provides correct word alignment. Supports pattern search and common options
 
-![image](https://github.com/user-attachments/assets/31428eea-487f-4632-be1b-5a62db2c6002)
-
+![image](https://github.com/user-attachments/assets/2ae1a162-43d7-473d-81d0-eed746e844df)
 
 ### `ls`: Sort entries alphabetically if none of -rtS is specified.
 ### `lsd`: Sort entries alphabetically, but directories are always first, if none of -rtS is specified.
